@@ -37,7 +37,9 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/mylist',
-                element:<PrivateRoutes><MyList></MyList></PrivateRoutes>
+                element:<PrivateRoutes><MyList></MyList></PrivateRoutes>,
+                loader: () => fetch('http://localhost:5000/addspot')
+
             },
             {
                 path:'/all',
