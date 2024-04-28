@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyList = () => {
@@ -77,7 +77,7 @@ const MyList = () => {
               <td>{data.name}</td>
               <td>{data.subcategory_name}</td>
               <td>{data.season}</td>
-              <td><button className="btn btn-success text-white">Update</button></td>
+              <td><Link to={`/update/${data._id}`}><button className="btn btn-success text-white">Update</button> </Link></td>
               <td><button  onClick={() => handleDelete(data._id)}  className="btn btn-error text-white">Delete</button></td>
               
              

@@ -10,6 +10,7 @@ import Allsport from "../pages/Allsport/Allsport";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import DetailsSpot from "../pages/DetailsSpot/DetailsSpot";
 import PrivateRoutes from "./PrivateRoutes";
+import Update from "../pages/Update/Update";
 
 
 
@@ -55,6 +56,11 @@ const routes = createBrowserRouter([
                 element:<PrivateRoutes><DetailsSpot></DetailsSpot></PrivateRoutes>,
                 loader: ({params}) => fetch(`http://localhost:5000/addspot/${params.id}`),
             },
+            {
+                path:'update/:id',
+                element:<PrivateRoutes><Update></Update></PrivateRoutes>,
+                loader: ({params}) => fetch(`http://localhost:5000/addspot/${params.id}`),
+            }
           
         ]
     }
