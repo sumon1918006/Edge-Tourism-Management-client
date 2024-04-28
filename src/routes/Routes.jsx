@@ -8,6 +8,8 @@ import MyList from "../pages/MyList/MyList";
 import AddSpot from "../pages/AddSpot/AddSpot";
 import Allsport from "../pages/Allsport/Allsport";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import DetailsSpot from "../pages/DetailsSpot/DetailsSpot";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 
@@ -39,11 +41,17 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/all',
-                element:<Allsport></Allsport>
+                element:<Allsport></Allsport>,
+                loader: () => fetch('http://localhost:5000/addspot')
             },
             {
                 path:'/add',
                 element:<AddSpot></AddSpot>
+            },
+            {
+                path:'details/:id',
+                element:<PrivateRoutes><DetailsSpot></DetailsSpot></PrivateRoutes>,
+                loader: ({params}) => fetch(`http://localhost:5000/addspot/${params.id}`),
             },
           
         ]
