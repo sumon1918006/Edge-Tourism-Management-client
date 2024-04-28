@@ -3,13 +3,12 @@
 
 import { IoMdPeople } from "react-icons/io";
 import { IoTime } from "react-icons/io5";
-import { MdPeople } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const AddSpotCard = ({allspot} ) => {
 
 
-    const {name, image,_id, location, cost, visitor, user_name, user_email, subcategory_name, season, time, short_description} = allspot;
+    const {name, image,_id, location, cost, visitor, user_name, user_email, subcategory_name, season, time} = allspot;
 
     // console.log(allspot);
 

@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { FaMapLocationDot } from "react-icons/fa6";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 
   
@@ -10,6 +11,10 @@ const AddSpot = () => {
     useEffect(() => {
         document.title = 'Add Tourist Spot';
     }, []);
+
+    const {user} = useContext(AuthContext);
+    const uid = user?.uid;
+    console.log("this is uid:",uid);
 
     const handleAddSpot = event =>{
         event.preventDefault();
@@ -27,7 +32,7 @@ const AddSpot = () => {
         const time = form.time.value;
         const short_description = form.short_description.value;
 
-        const addNewSpot =  {name, image, location, cost, visitor, user_name, user_email, subcategory_name, season, time, short_description};
+        const addNewSpot =  {name, image, location, cost, visitor, user_name, user_email, subcategory_name, season, time, short_description,uid};
         console.log(addNewSpot);
     
 

@@ -37,7 +37,7 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/mylist',
-                element:<MyList></MyList>
+                element:<PrivateRoutes><MyList></MyList></PrivateRoutes>
             },
             {
                 path:'/all',
@@ -46,7 +46,7 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/add',
-                element:<AddSpot></AddSpot>
+                element:<PrivateRoutes><AddSpot></AddSpot></PrivateRoutes>
             },
             {
                 path:'details/:id',
