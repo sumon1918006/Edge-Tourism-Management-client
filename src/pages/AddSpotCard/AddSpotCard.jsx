@@ -1,5 +1,4 @@
-// import { GrLocation } from "react-icons/gr";
-// import { Link } from "react-router-dom";
+
 
 import { IoMdPeople } from "react-icons/io";
 import { IoTime } from "react-icons/io5";
@@ -19,7 +18,7 @@ const AddSpotCard = ({allspot} ) => {
         <div className="card-body mr-4 lg:mr-0">
             <h2 className="text-[18px] font-bold text-center lg:font-bold text-4xl">{name}</h2>
             <div className='flex justify-between py-3'>
-                <h1 className='font-bold'>Average Cost: {cost}</h1>
+                <h1 className='font-bold'>Average Cost: {cost}$</h1>
                 <div className="flex items-center gap-2 font-bold">
                     <IoTime />
                     <h1 >Time: {time}</h1>
@@ -34,7 +33,7 @@ const AddSpotCard = ({allspot} ) => {
 
             <div className="flex items-center justify-center mt-5">
                
-                <Link to={`/details/${_id}`} className="btn btn-success text-white hover:btn-primary  hover:text-white">View Property</Link>
+                <Link to={`/details/${_id}`} className="btn btn-success text-white hover:btn-primary  hover:text-white">View Details</Link>
             </div>
         </div>
     </div>

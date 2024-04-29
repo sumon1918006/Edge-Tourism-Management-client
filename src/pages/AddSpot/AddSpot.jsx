@@ -62,7 +62,7 @@ const AddSpot = () => {
 
     return (
         <div className="pb-14">
-            <form onSubmit={handleAddSpot} className="mx-auto my-10 w-[800px] bg-gray-300 rounded-lg shadow-lg p-6">
+            <form onSubmit={handleAddSpot} className="mx-auto my-10 w-[800px] bg-gray-100 rounded-lg shadow-lg p-6">
 
                 <h1 className="flex items-center gap-3 text-2xl pb-2 font-bold border-b border-[#958d8d]">
                 <FaMapLocationDot /> <span>Tourists Spot Information</span></h1>
@@ -168,7 +168,7 @@ const AddSpot = () => {
                 </div>
 
                 <div className="text-center mt-10 mb-4">
-                    <input className="btn btn-success px-6" type="submit" name="" id="" value='Add Item' />
+                    <input className="btn btn-success text-white px-6" type="submit" name="" id="" value='Add Item' />
                 </div>
 
             </form>
