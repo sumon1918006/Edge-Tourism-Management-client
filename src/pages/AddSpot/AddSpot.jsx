@@ -54,7 +54,8 @@ const AddSpot = () => {
                     text: 'Coffee Added Successfully',
                     icon: 'success',
                     confirmButtonText: 'Cool'
-                  })
+                  });
+                  form.reset();
             }
         })
     }

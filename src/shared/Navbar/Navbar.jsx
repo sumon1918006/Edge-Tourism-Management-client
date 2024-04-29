@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProviders";
 
+
+
 const Navbar = () => {
 
   const {user, logOut} = useContext(AuthContext);
@@ -89,7 +91,9 @@ to="/about">About</NavLink></li>
         {
           user ? 
           <div className="flex gap-5">
-             <img src={user.photoURL} className="rounded-full  h-10" />
+             <img 
+             
+   src={user.photoURL} className="rounded-full  h-10" />
             <button onClick={handleSignOut} className="btn bg-[#E8604C] text-white font-bold text-xl  hover:btn-success hover:text-white">Sign Out</button>
           </div>
 
