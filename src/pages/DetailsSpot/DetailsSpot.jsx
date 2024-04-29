@@ -22,7 +22,7 @@ const DetailsSpot = () => {
                 <p className="text-xl font-medium py-4">Country : {subcategory_name}</p>
 
                 <div className="text-xl font-medium pb-6 pt-3 border-y-2 space-y-3">
-                    <p className='pt-2'>Average Cost : {cost}</p>
+                    <p className='pt-2'>Average Cost : {cost}$</p>
                     <div className="flex items-center gap-2 ">
                         <p className=''>
                             Location : {location}
