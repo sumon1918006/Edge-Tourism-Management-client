@@ -54,6 +54,9 @@ const MyList = () => {
 
   return (
     <div className="overflow-x-auto">
+         <h1 className='bg-slate-300 my-8 text-center pt-4 lg:pt-7 h-[70px] lg:h-[100px] text-3xl font-bold'>
+                My Tourists Spot List</h1>
+                {mypost.length>0?
       <table className="table">
         {/* head */}
         <thead>
@@ -85,6 +88,14 @@ const MyList = () => {
           ))}
         </tbody>
       </table>
+      :
+      <div className="mt-20 text-center mb-5 bg-cyan-300 space-y-5 rounded-xl border py-10 w-[550px] mx-auto">
+      <h1 className="text-5xl font-semibold">No spot you add ...</h1>
+      <p className="text-2xl font-medium">Please add an Spot</p>
+      <Link to='/add'> <button className="text-white mt-5 text-lg btn btn-success">Add Now</button></Link>
+
+  </div>
+}
     </div>
   );
 };

@@ -68,6 +68,8 @@ const Update = () => {
 
     return (
         <div className="pb-14">
+            
+
             <form onSubmit={handleAddSpot} className="mx-auto my-10 w-[800px] bg-gray-300 rounded-lg shadow-lg p-6">
 
                 <h1 className="flex items-center gap-3 text-2xl pb-2 font-bold border-b border-[#958d8d]">
