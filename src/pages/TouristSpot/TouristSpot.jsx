@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AddSpotCard from "../AddSpotCard/AddSpotCard";
+import Card from "./Card";
 
 const TouristSpot = () => {
   const [spots, setSpot] = useState([]);
@@ -16,10 +16,10 @@ const TouristSpot = () => {
     <div>
       <div className="card-slider-container grid md:grid-cols-2 lg:grid-cols-3 gap-3 p-10 lg:mx-20 border rounded-2xl bg-white lg:bg-[#ebe1e1]">
         {spots.map(spot => (
-          <AddSpotCard
+          <Card
           key={spot._id}
           allspot={spot}
-          ></AddSpotCard>
+          ></Card>
         ))}
       </div>
     </div>

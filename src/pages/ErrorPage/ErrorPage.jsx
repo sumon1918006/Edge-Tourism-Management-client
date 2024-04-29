@@ -2,9 +2,8 @@
 import { Link, useRouteError } from "react-router-dom";
 import 'animate.css';
 import { useEffect } from "react";
-// import Lottie from "lottie-react";
-
-// import errorData from "./error.json"
+import Lottie from "lottie-react";
+ import Error from "../../assets/Error.json"
 
 
 const ErrorPage = () => {
@@ -17,16 +16,17 @@ const ErrorPage = () => {
   
 
     return (
-        <div className="animate__animated animate__zoomIn text-white bg-slate-700 card w-1/2 mt-28 mx-auto p-5 lg:mt-52 items-center justify-center text-center border lg:h-[50vh]">
+        <div className="animate__animated animate__zoomIn text-white bg-gray-100 card w-1/2 mt-28 mx-auto p-5 lg:mt-30 items-center justify-center text-center border lg:h-[80vh]">
 
             {
                 error.status === 404 && <div >
 
-
+                            <div>
+                            <Lottie className="rounded-xl w-800px"  animationData={Error} />
+                            </div>
                    
-                    <h3 className="lg:text-5xl font-semibold">Page is not found !!!</h3>
-                    <p className="py-5 lg:text-2xl font-medium">Go back where you from</p>
-                    <Link to="/"><button className="btn btn-success text-white hover:btn-info px-6">Home</button></Link>
+                    <p className="py-5 lg:text-2xl mt-10 text-black font-medium">Go back where you from</p>
+                    <Link to="/"><button className="btn btn-success  text-white hover:btn-info px-6">Home</button></Link>
 
                 </div>
             }

@@ -12,7 +12,7 @@ const Contract = () => {
         <div className="mt-10 shadow-2xl  mx-auto rounded-2xl border border-[#cbbcbc] bg-gray-100 ">
         <h2 className="text-4xl  font-bold mt-10 mb-10">Contract Us !</h2>
             <div className="flex justify-center">
-            <Lottie className="rounded-xl w-800px]"  animationData={contract} />
+            <Lottie className="rounded-xl w-"  animationData={contract} />
             </div>
             <Link to="/about"><button className="btn btn-success text-white my-3">Contract</button></Link>
         </div>
