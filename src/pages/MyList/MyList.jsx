@@ -54,7 +54,7 @@ const MyList = () => {
 
   return (
     <div className="overflow-x-auto">
-         <h1 className='bg-slate-300 my-8 text-center pt-4 lg:pt-7 h-[70px] lg:h-[100px] text-3xl font-bold'>
+         <h1 className='bg-slate-300  text-center pt-4 lg:pt-7 h-[70px] lg:h-[100px] text-3xl font-bold'>
                 My Tourists Spot List</h1>
                 {mypost.length>0?
       <table className="table">
@@ -62,10 +62,10 @@ const MyList = () => {
         <thead>
           <tr>
             <th></th>
-            <th>User Name</th>
-            <th>Created Spot Name</th>
-            <th>Country Name</th>
-            <th>Season</th>
+            <th className="text-xl">User Name</th>
+            <th className="text-xl">Created Spot Name</th>
+            <th className="text-xl">Country Name</th>
+            <th className="text-xl">Season</th>
             <th></th>
             <th></th>
           </tr>
@@ -76,10 +76,10 @@ const MyList = () => {
           mypost.map((data) => (
             <tr key={data._id}>
               <th></th>
-              <td>{data.user_name}</td>
-              <td>{data.name}</td>
-              <td>{data.subcategory_name}</td>
-              <td>{data.season}</td>
+              <td className="text-[16px]">{data.user_name}</td>
+              <td className="text-[16px]">{data.name}</td>
+              <td className="text-[16px]">{data.subcategory_name}</td>
+              <td className="text-[16px]">{data.season}</td>
               <td><Link to={`/update/${data._id}`}><button className="btn btn-success text-white">Update</button> </Link></td>
               <td><button  onClick={() => handleDelete(data._id)}  className="btn btn-error text-white">Delete</button></td>
               
