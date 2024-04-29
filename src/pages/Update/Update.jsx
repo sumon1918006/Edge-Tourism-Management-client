@@ -10,14 +10,16 @@ import { useLoaderData } from "react-router-dom";
 
 const Update = () => {
     useEffect(() => {
-        document.title = 'Add Tourist Spot';
+        document.title = 'Update Tourist Spot';
     }, []);
 
     const {user} = useContext(AuthContext);
     const uid = user?.uid;
-    console.log("this is uid:",uid);
-    const items = useLoaderData();
-    const {_id} = items;
+    // console.log("this is uid:",uid);
+    const spot = useLoaderData();
+    const {name, image,_id, location, cost, visitor,short_description, user_name, user_email, subcategory_name, season, time} = spot;
+    // console.log(spot);
+    // console.log(_id);
 
     const handleAddSpot = event =>{
         event.preventDefault();
@@ -40,7 +42,7 @@ const Update = () => {
         console.log(addNewSpot);
 
 
-        fetch(`http://localhost:5000/adds/${_id}`, {
+        fetch(`http://localhost:5000/addspot/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -53,7 +55,7 @@ const Update = () => {
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Coffee Updated Successfully',
+                        text: 'Spot Updated Successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
@@ -75,11 +77,11 @@ const Update = () => {
                 <div className="flex gap-5 mt-4">
                     <div className="w-full">
                         <p className="font-semibold pb-1">Tourists Spot Name</p>
-                        <input name="spot_name" type="text" placeholder="Enter tourists spot name" className="p-1 w-full border input-info rounded-lg" />
+                        <input name="spot_name" type="text" defaultValue={name} placeholder="Enter tourists spot name" className="p-1 w-full border input-info rounded-lg" />
                     </div>
                     <div className="w-full">
                         <p className="font-semibold pb-1">Country Name</p>
-                        <select name="subcategory_name" className="p-1 w-full border input-info rounded-lg">
+                        <select name="subcategory_name" defaultValue={subcategory_name} className="p-1 w-full border input-info rounded-lg">
                             <option disabled selected>Select Country_Name</option>
                             <option>Bangladesh</option>
                             <option> Thailand</option>
@@ -96,12 +98,12 @@ const Update = () => {
                 <div className="flex gap-5 mt-4 border-b border-[#958d8d] pb-8">
                     <div className="w-full">
                         <p className="font-semibold pb-1">Photo URL</p>
-                        <input name="image" type="text" placeholder="Enter image url" className="p-1 w-full border input-info rounded-lg" />
+                        <input name="image" defaultValue={image} type="text" placeholder="Enter image url" className="p-1 w-full border input-info rounded-lg" />
                     </div>
                    
                     <div className="w-full">
                         <p className="font-semibold pb-1">Location</p>
-                        <input name="location" type="text" placeholder="Enter location name" className="p-1 w-full border input-info rounded-lg" />
+                        <input name="location" defaultValue={location} type="text" placeholder="Enter location name" className="p-1 w-full border input-info rounded-lg" />
                     </div>
                 </div>
 
@@ -109,7 +111,7 @@ const Update = () => {
                 <div className="flex gap-5 pt-5">
                     <div className="w-full">
                         <p className="font-semibold pb-1">Seasonality</p>
-                        <select  name="season" className="p-1 w-full border input-info rounded-lg">
+                        <select  name="season" defaultValue={season} className="p-1 w-full border input-info rounded-lg">
                             <option disabled selected>Select Season</option>
                             <option>Winter</option>
                             <option>Spring</option>
@@ -121,7 +123,7 @@ const Update = () => {
 
                     <div className="w-full">
                         <p className="font-semibold pb-1"> Travel Time</p>
-                        <select name="time" className="p-1 w-full border input-info rounded-lg">
+                        <select name="time" defaultValue={time} className="p-1 w-full border input-info rounded-lg">
                             <option disabled selected>Select Days</option>
                             <option>3 Days</option>
                             <option>7 Days</option>
@@ -137,15 +139,15 @@ const Update = () => {
                 <div className="flex gap-5 pt-5 border-b border-[#958d8d] pb-8">
                     <div className="w-full">
                     <div className="w-full">
-                        <p className="font-semibold pb-1">Average cost</p>
-                        <input name="cost" type="text" placeholder="$0.00" className="p-1 w-full border input-info rounded-lg" />
+                        <p className="font-semibold  pb-1">Average cost</p>
+                        <input name="cost" defaultValue={cost} type="text" placeholder="$0.00" className="p-1 w-full border input-info rounded-lg" />
                     </div>
                     </div>
 
                     <div className="w-full">
                     <div className="w-full">
                         <p className="font-semibold pb-1">Total Visitors PerYear</p>
-                        <input name="visitor" type="text" placeholder="1000" className="p-1 w-full border input-info rounded-lg" />
+                        <input name="visitor" defaultValue={visitor} type="text" placeholder="1000" className="p-1 w-full border input-info rounded-lg" />
                     </div>
                     </div>
                 </div>
@@ -153,7 +155,7 @@ const Update = () => {
                 {/* Row 5 */}
                 <div className="mt-5">
                     <p className="font-semibold pb-2">Short description</p>
-                    <textarea name="short_description" className="w-full border input-info rounded-lg" placeholder="Write here" rows="5"></textarea>
+                    <textarea name="short_description" defaultValue={short_description} className="w-full border input-info rounded-lg" placeholder="Write here" rows="5"></textarea>
                 </div>
 
                 <h1 className="flex mt-8 items-center gap-3 text-2xl pb-2 font-bold border-b border-[#958d8d]">
@@ -163,11 +165,11 @@ const Update = () => {
                 <div className="flex gap-5 mt-4">
                     <div className="w-full">
                         <p className="font-semibold pb-1">User Name</p>
-                        <input name="user_name" type="text" placeholder="Enter your name" className="p-1 w-full border input-info rounded-lg" />
+                        <input name="user_name" defaultValue={user_name} type="text" placeholder="Enter your name" className="p-1 w-full border input-info rounded-lg" />
                     </div>
                     <div className="w-full">
                         <p className="font-semibold pb-1">Email</p>
-                        <input name="user_email" type="text" placeholder="Enter your Email" className="p-1 w-full border input-info rounded-lg" />
+                        <input name="user_email" defaultValue={user_email} type="text" placeholder="Enter your Email" className="p-1 w-full border input-info rounded-lg" />
                     </div>
                 </div>
 
