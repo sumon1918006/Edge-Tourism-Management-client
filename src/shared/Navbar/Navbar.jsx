@@ -171,14 +171,14 @@ to="/register">Register</NavLink></li> */}
                 </button>
               </div>
             ) : (
-              <div className="">
+              <div className=" flex space-x-4">
                 <Link to="/login">
                   <button className="btn bg-[#E8604C] mr-2 text-white font-bold text-xl border-[yellow] hover:btn-success hover:text-white">
                     Login
                   </button>
                 </Link>
                 <Link to="/register">
-                  <button className="btn bg-[#E8604C] text-white font-bold text-xl border-[yellow] hover:btn-success hover:text-white">
+                  <button className="btn bg-[#E8604C] hidden lg:block text-white font-bold text-xl border-[yellow] hover:btn-success hover:text-white">
                     Register
                   </button>
                 </Link>
