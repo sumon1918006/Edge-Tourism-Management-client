@@ -48,9 +48,9 @@ const DetailsSpot = () => {
           </div>
         )}
 
-        <Link to="/all" className="mt-2 ">
+        <Link to="/" className="mt-2 ">
           <button className="btn  btn-success text-white">
-            Back to All Tourist Spot
+            Back to Home
           </button>
         </Link>
       </section>

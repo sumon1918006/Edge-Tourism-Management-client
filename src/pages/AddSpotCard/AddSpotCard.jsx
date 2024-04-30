@@ -40,7 +40,7 @@ const AddSpotCard = ({ allspot }) => {
 
         <div className="flex items-center justify-center mt-5">
           <Link
-            to={`/details/${_id}`}
+            to={`/subcategoryCountryDetails/${_id}`}
             className="btn btn-success text-white hover:btn-primary  hover:text-white"
           >
             View Details

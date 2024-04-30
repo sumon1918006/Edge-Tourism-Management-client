@@ -47,12 +47,14 @@ const routes = createBrowserRouter([
             <MyList></MyList>
           </PrivateRoutes>
         ),
-        loader: () => fetch("http://localhost:5000/addspot"),
+        loader: () =>
+          fetch("https://b9-a10-tourism-management-server.vercel.app/addspot"),
       },
       {
         path: "/all",
         element: <Allsport></Allsport>,
-        loader: () => fetch("http://localhost:5000/addspot"),
+        loader: () =>
+          fetch("https://b9-a10-tourism-management-server.vercel.app/addspot"),
       },
       {
         path: "/add",
@@ -70,8 +72,11 @@ const routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/addspot/${params.id}`),
+          fetch(
+            `https://b9-a10-tourism-management-server.vercel.app/addspot/${params.id}`
+          ),
       },
+
       {
         path: "touristDetails/:id",
         element: (
@@ -80,8 +85,24 @@ const routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/touristSpot/${params.id}`),
+          fetch(
+            `https://b9-a10-tourism-management-server.vercel.app/touristSpot/${params.id}`
+          ),
       },
+
+      {
+        path: "subcategoryCountryDetails/:id",
+        element: (
+          <PrivateRoutes>
+            <DetailsSpot></DetailsSpot>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://b9-a10-tourism-management-server.vercel.app/categoryCountry/${params.id}`
+          ),
+      },
+
       {
         path: "update/:id",
         element: (
@@ -90,31 +111,33 @@ const routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/addspot/${params.id}`),
+          fetch(
+            `https://b9-a10-tourism-management-server.vercel.app/addspot/${params.id}`
+          ),
       },
       {
         path: "/bangladesh",
-        element:<Bangladesh></Bangladesh>,
+        element: <Bangladesh></Bangladesh>,
       },
       {
         path: "/indonesia",
-        element:<Indonesia></Indonesia>,
+        element: <Indonesia></Indonesia>,
       },
       {
         path: "/malaysia",
-        element:<Malaysia></Malaysia>,
+        element: <Malaysia></Malaysia>,
       },
       {
         path: "/vietnam",
-        element:<Vietnam></Vietnam>,
+        element: <Vietnam></Vietnam>,
       },
       {
         path: "/thailand",
-        element:<Thailand></Thailand>,
+        element: <Thailand></Thailand>,
       },
       {
         path: "/cambodia",
-        element:<Cambodia></Cambodia>,
+        element: <Cambodia></Cambodia>,
       },
     ],
   },
