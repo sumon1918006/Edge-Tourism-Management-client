@@ -135,7 +135,7 @@ const AddSpot = () => {
         </div>
 
         {/* Row 3 */}
-        <div className="flex gap-5 pt-5">
+        <div className="lg:flex gap-5 pt-5">
           <div className="w-full">
             <p className="font-semibold pb-1">Seasonality</p>
             <select
@@ -171,7 +171,7 @@ const AddSpot = () => {
         </div>
 
         {/* Row 4 */}
-        <div className="flex gap-5 pt-5 border-b border-[#958d8d] pb-8">
+        <div className="lg:flex gap-5 pt-5 border-b border-[#958d8d] pb-8">
           <div className="w-full">
             <div className="w-full">
               <p className="font-semibold pb-1">Average cost</p>
@@ -213,7 +213,7 @@ const AddSpot = () => {
         </h1>
 
         {/* Row 1,1*/}
-        <div className="flex gap-5 mt-4">
+        <div className="lg:flex gap-5 mt-4">
           <div className="w-full">
             <p className="font-semibold pb-1">User Name</p>
             <input
