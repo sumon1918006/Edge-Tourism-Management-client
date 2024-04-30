@@ -1,8 +1,12 @@
 import { useLoaderData } from "react-router-dom";
-import AddSpotCard from "../AddSpotCard/AddSpotCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import AllSpotCard from "./AllSoptCard";
 
 const Allsport = () => {
+
+  useEffect(() => {
+    document.title = 'All Tourist Spot';
+}, []);
 
   const allspot = useLoaderData();
   const [sortData, setSortData] = useState(allspot);
@@ -33,7 +37,7 @@ const Allsport = () => {
 
       <div className=" card-slider-container grid md:grid-cols-2 lg:grid-cols-3 gap-3 p-10 lg:mx-20 border rounded-2xl bg-white lg:bg-[#ebe1e1]">
         {sortData.map((spot) => (
-          <AddSpotCard key={spot._id} allspot={spot}></AddSpotCard>
+          <AllSpotCard key={spot._id} allspot={spot}></AllSpotCard>
         ))}
       </div>
     </div>

@@ -2,7 +2,7 @@ import { IoMdPeople } from "react-icons/io";
 import { IoTime } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-const AddSpotCard = ({ allspot }) => {
+const AllSpotCard = ({ allspot }) => {
   const { name, image, _id,subcategory_name, cost, visitor, season, time } = allspot;
 
   // console.log(allspot);
@@ -32,15 +32,15 @@ const AddSpotCard = ({ allspot }) => {
             Total Visitors Per Year: {visitor} <IoMdPeople />
           </h2>
         </div>
-        <div className="lg:flex justify-between">
+        <div className="flex justify-between">
         <h3 className="text-start font-bold">Season: {season}</h3>
         <h3 className="text-start font-bold">Country: {subcategory_name}</h3>
         </div>
 
 
-        <div className="lg:flex items-center justify-center mt-5">
+        <div className="flex items-center justify-center mt-5">
           <Link
-            to={`/subcategoryCountryDetails/${_id}`}
+            to={`/details/${_id}`}
             className="btn btn-success text-white hover:btn-primary  hover:text-white"
           >
             View Details
@@ -51,4 +51,4 @@ const AddSpotCard = ({ allspot }) => {
   );
 };
 
-export default AddSpotCard;
+export default AllSpotCard;

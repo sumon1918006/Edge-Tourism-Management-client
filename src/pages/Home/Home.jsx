@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Banner from "../Banner/Banner";
 import Contract from "../Contract/Contract";
 import Country from "../Country/Country";
@@ -5,6 +6,9 @@ import TouristSpot from "../TouristSpot/TouristSpot";
 import Chose from "./Chose/Chose";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'Home';
+}, []);
   return (
     <div>
       <Banner></Banner>

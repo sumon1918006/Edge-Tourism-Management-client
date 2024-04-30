@@ -239,7 +239,7 @@ const Update = () => {
         </h1>
 
         {/* Row 1,1*/}
-        <div className="flex gap-5 mt-4">
+        <div className="lg:flex gap-5 mt-4">
           <div className="w-full">
             <p className="font-semibold pb-1">User Name</p>
             <input

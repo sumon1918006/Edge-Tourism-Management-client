@@ -1,10 +1,16 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyList = () => {
+
+ 
+    useEffect(() => {
+      document.title = 'MyList';
+  }, []);
+
   const { user } = useContext(AuthContext);
   const loadedData = useLoaderData();
   const [spots, setSpots] = useState(loadedData);
