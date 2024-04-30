@@ -7,7 +7,7 @@ AOS.init();
 
 const Chose = () => {
     return (
-        <div className="my-24 flex flex-col lg:flex-row rounded-2xl gap-4 lg:gap-12 mx-2 lg:mx-32 p-3 lg:p-8 shadow-2xl border border-[#cbbcbc] lg:my-32" >
+        <div className="my-24 flex flex-col bg-white lg:flex-row rounded-2xl gap-4 lg:gap-12 mx-2 lg:mx-32 p-3 lg:p-8 shadow-2xl border border-[#cbbcbc] lg:my-32" >
 
             <div data-aos="fade-down-right" data-aos-duration="1000">
                 <img className="w-full h-[400px] lg:h-[630px] lg:w-[650px] rounded-2xl" src="https://i.ibb.co/DYq7LJh/sebastian-leon-prado-Mg-ODFm-LOa-EY-unsplash.jpg" alt="" />

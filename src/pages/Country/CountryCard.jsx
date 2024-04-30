@@ -15,7 +15,7 @@ const Card = ({ allspot }) => {
       <figure>
         <img className="w-[400px] h-[400px] rounded" src={image} alt="Shoes" />
       </figure>
-      <div className="card-body mr-4 lg:mr-0">
+      <div className="card-body bg-white mr-4 lg:mr-0">
         <h2 className="text-[18px] font-bold text-center lg:font-bold text-4xl">
           {subcategory_name}
         </h2>

@@ -17,12 +17,12 @@ const Allsport = () => {
 
   return (
     <div>
-      <h1 className="text-xl lg:text-5xl text-center font-semibold py-5">
+      <h1 className="text-xl bg-white lg:text-5xl text-center font-semibold py-5">
         All Sport Data
       </h1>
 
-      <div className="text-center lg:pb-5">
-        <select className="select select-accent lg:text-lg w-full max-w-xs" onChange={handleValue}>
+      <div className="text-center bg-white  lg:pb-5">
+        <select className="select bg-white select-accent lg:text-lg w-full max-w-xs" onChange={handleValue}>
           <option disabled selected>
             Sort By 
           </option>
