@@ -13,8 +13,11 @@ const AddSpot = () => {
     }, []);
 
     const {user} = useContext(AuthContext);
+    // console.log(user);
     const uid = user?.uid;
-    console.log("this is uid:",uid);
+    const user_name = user?.displayName;
+    const user_email = user?.email;
+    console.log("this is uid:",uid,user_email,user_name);
 
     const handleAddSpot = event =>{
         event.preventDefault();
@@ -63,13 +66,13 @@ const AddSpot = () => {
 
     return (
         <div className="pb-14">
-            <form onSubmit={handleAddSpot} className="mx-auto my-10 w-[800px] bg-gray-100 rounded-lg shadow-lg p-6">
+            <form onSubmit={handleAddSpot} className="mx-auto my-10 lg:w-[800px] bg-gray-100 rounded-lg shadow-lg p-6">
 
                 <h1 className="flex items-center gap-3 text-2xl pb-2 font-bold border-b border-[#958d8d]">
                 <FaMapLocationDot /> <span>Tourists Spot Information</span></h1>
 
                 {/* Row 1 */}
-                <div className="flex gap-5 mt-4">
+                <div className="lg:flex gap-5 mt-4">
                     <div className="w-full">
                         <p className="font-semibold pb-1">Tourists Spot Name</p>
                         <input name="spot_name" type="text" placeholder="Enter tourists spot name" className="p-1 w-full border input-info rounded-lg" />
@@ -90,7 +93,7 @@ const AddSpot = () => {
                 </div>
 
                 {/* Row 2 */}
-                <div className="flex gap-5 mt-4 border-b border-[#958d8d] pb-8">
+                <div className="lg:flex gap-5 mt-4 border-b border-[#958d8d] pb-8">
                     <div className="w-full">
                         <p className="font-semibold pb-1">Photo URL</p>
                         <input name="image" type="text" placeholder="Enter image url" className="p-1 w-full border input-info rounded-lg" />
@@ -160,11 +163,11 @@ const AddSpot = () => {
                 <div className="flex gap-5 mt-4">
                     <div className="w-full">
                         <p className="font-semibold pb-1">User Name</p>
-                        <input name="user_name" type="text" placeholder="Enter your name" className="p-1 w-full border input-info rounded-lg" />
+                        <input name="user_name" type="text" value={user_name} placeholder="Enter your name" className="p-1 w-full border input-info rounded-lg" />
                     </div>
                     <div className="w-full">
                         <p className="font-semibold pb-1">Email</p>
-                        <input name="user_email" type="text" placeholder="Enter your Email" className="p-1 w-full border input-info rounded-lg" />
+                        <input name="user_email" type="text" value={user_email} placeholder="Enter your Email" className="p-1 w-full border input-info rounded-lg" />
                     </div>
                 </div>
 

@@ -20,7 +20,7 @@ const AddSpotCard = ({ allspot }) => {
         <h2 className="text-[18px] font-bold text-center lg:font-bold text-4xl">
           {name}
         </h2>
-        <div className="flex justify-between ">
+        <div className="flex justify-between  ">
           <h1 className="font-bold">Average Cost: {cost}$</h1>
           <div className="flex items-center gap-2 font-bold">
             <IoTime />

@@ -3,9 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProviders";
 
+
+
+
+
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-
+//  console.log(user);
   const [theme, setTheme] = useState('light');
 
   const handleToggle = e =>{
@@ -154,7 +158,11 @@ to="/register">Register</NavLink></li> */}
 
             {user ? (
               <div className="flex gap-5">
+                <div className="hover:tooltip hover:tooltip-open hover:tooltip-bottom z-10" data-tip={user.displayName}>
                 <img src={user.photoURL} className="rounded-full  h-10" />
+</div>
+              
+              
                 <button
                   onClick={handleSignOut}
                   className="btn bg-[#E8604C] text-white font-bold text-xl  hover:btn-success hover:text-white"

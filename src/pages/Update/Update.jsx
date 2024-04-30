@@ -70,13 +70,13 @@ const Update = () => {
         <div className="pb-14">
 
 
-            <form onSubmit={handleAddSpot} className="mx-auto my-10 w-[800px] bg-gray-100 rounded-lg shadow-lg p-6">
+            <form onSubmit={handleAddSpot} className="mx-auto my-10 lg:w-[800px] bg-gray-100 rounded-lg shadow-lg p-6">
 
                 <h1 className="flex items-center gap-3 text-2xl pb-2 font-bold border-b border-[#958d8d]">
                 <FaMapLocationDot /> <span>Tourists Spot Information</span></h1>
 
                 {/* Row 1 */}
-                <div className="flex gap-5 mt-4">
+                <div className="lg:flex gap-5 mt-4">
                     <div className="w-full">
                         <p className="font-semibold pb-1">Tourists Spot Name</p>
                         <input name="spot_name" type="text" defaultValue={name} placeholder="Enter tourists spot name" className="p-1 w-full border input-info rounded-lg" />
@@ -97,7 +97,7 @@ const Update = () => {
                 </div>
 
                 {/* Row 2 */}
-                <div className="flex gap-5 mt-4 border-b border-[#958d8d] pb-8">
+                <div className="lg:flex gap-5 mt-4 border-b border-[#958d8d] pb-8">
                     <div className="w-full">
                         <p className="font-semibold pb-1">Photo URL</p>
                         <input name="image" defaultValue={image} type="text" placeholder="Enter image url" className="p-1 w-full border input-info rounded-lg" />
@@ -110,7 +110,7 @@ const Update = () => {
                 </div>
 
                 {/* Row 3 */}
-                <div className="flex gap-5 pt-5">
+                <div className="lg:flex gap-5 pt-5">
                     <div className="w-full">
                         <p className="font-semibold pb-1">Seasonality</p>
                         <select  name="season" defaultValue={season} className="p-1 w-full border input-info rounded-lg">
@@ -138,7 +138,7 @@ const Update = () => {
                 </div>
 
                 {/* Row 4 */}
-                <div className="flex gap-5 pt-5 border-b border-[#958d8d] pb-8">
+                <div className="lg:flex gap-5 pt-5 border-b border-[#958d8d] pb-8">
                     <div className="w-full">
                     <div className="w-full">
                         <p className="font-semibold  pb-1">Average cost</p>
@@ -167,11 +167,11 @@ const Update = () => {
                 <div className="flex gap-5 mt-4">
                     <div className="w-full">
                         <p className="font-semibold pb-1">User Name</p>
-                        <input name="user_name" defaultValue={user_name} type="text" placeholder="Enter your name" className="p-1 w-full border input-info rounded-lg" />
+                        <input name="user_name" value={user_name} type="text" placeholder="Enter your name" className="p-1 w-full border input-info rounded-lg" />
                     </div>
                     <div className="w-full">
                         <p className="font-semibold pb-1">Email</p>
-                        <input name="user_email" defaultValue={user_email} type="text" placeholder="Enter your Email" className="p-1 w-full border input-info rounded-lg" />
+                        <input name="user_email" value={user_email} type="text" placeholder="Enter your Email" className="p-1 w-full border input-info rounded-lg" />
                     </div>
                 </div>
 

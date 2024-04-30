@@ -27,8 +27,8 @@ const BannerData = () => {
                     </div>
 
                     <div className='border-r-4 rounded border-[#1a1212] pr-12'>
-                        <h1 className='font-bold'>Budget</h1>
-                        <p className='text-base flex items-center gap-2'><span>Choose Your budget</span> <MdKeyboardArrowDown className='text-xl' /></p>
+                        <h1 className='font-bold'>Hotel</h1>
+                        <p className='text-base flex items-center gap-2'><span>Choose Your Hotel</span> <MdKeyboardArrowDown className='text-xl' /></p>
                     </div>
 
                     <button className='px-8 btn btn-success text-white hover:btn-primary hover:text-white'>Search</button>

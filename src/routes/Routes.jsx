@@ -11,63 +11,112 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import DetailsSpot from "../pages/DetailsSpot/DetailsSpot";
 import PrivateRoutes from "./PrivateRoutes";
 import Update from "../pages/Update/Update";
-
-
+import Bangladesh from "../pages/Category/Bangladesh";
+import Indonesia from "../pages/Category/Indonesia";
+import Malaysia from "../pages/Category/Malaysia";
+import Vietnam from "../pages/Category/Vietnam";
+import Thailand from "../pages/Category/Thailand";
+import Cambodia from "../pages/Category/Cambodia";
 
 const routes = createBrowserRouter([
-    {
-        path:'/',
-        element:<Root></Root>,
-        errorElement:<ErrorPage></ErrorPage>,
-        children:[
-            {
-                path:'/',
-                element:<Home></Home>
-            },
-            {
-                path:'/login',
-                element:<Login></Login>
-            },
-            {
-                path:'/register',
-                element:<Register></Register>
-            },
-            {
-                path:'/about',
-                element:<About></About>
-            },
-            {
-                path:'/mylist',
-                element:<PrivateRoutes><MyList></MyList></PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/addspot')
-
-            },
-            {
-                path:'/all',
-                element:<Allsport></Allsport>,
-                loader: () => fetch('http://localhost:5000/addspot')
-            },
-            {
-                path:'/add',
-                element:<PrivateRoutes><AddSpot></AddSpot></PrivateRoutes>
-            },
-            {
-                path:'details/:id',
-                element:<PrivateRoutes><DetailsSpot></DetailsSpot></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/addspot/${params.id}`),
-            },
-            {
-                path:'touristDetails/:id',
-                element:<PrivateRoutes><DetailsSpot></DetailsSpot></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/touristSpot/${params.id}`),
-            },
-            {
-                path:'update/:id',
-                element:<PrivateRoutes><Update></Update></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/addspot/${params.id}`),
-            }
-          
-        ]
-    }
+  {
+    path: "/",
+    element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/mylist",
+        element: (
+          <PrivateRoutes>
+            <MyList></MyList>
+          </PrivateRoutes>
+        ),
+        loader: () => fetch("http://localhost:5000/addspot"),
+      },
+      {
+        path: "/all",
+        element: <Allsport></Allsport>,
+        loader: () => fetch("http://localhost:5000/addspot"),
+      },
+      {
+        path: "/add",
+        element: (
+          <PrivateRoutes>
+            <AddSpot></AddSpot>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "details/:id",
+        element: (
+          <PrivateRoutes>
+            <DetailsSpot></DetailsSpot>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/addspot/${params.id}`),
+      },
+      {
+        path: "touristDetails/:id",
+        element: (
+          <PrivateRoutes>
+            <DetailsSpot></DetailsSpot>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/touristSpot/${params.id}`),
+      },
+      {
+        path: "update/:id",
+        element: (
+          <PrivateRoutes>
+            <Update></Update>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/addspot/${params.id}`),
+      },
+      {
+        path: "/bangladesh",
+        element:<Bangladesh></Bangladesh>,
+      },
+      {
+        path: "/indonesia",
+        element:<Indonesia></Indonesia>,
+      },
+      {
+        path: "/malaysia",
+        element:<Malaysia></Malaysia>,
+      },
+      {
+        path: "/vietnam",
+        element:<Vietnam></Vietnam>,
+      },
+      {
+        path: "/thailand",
+        element:<Thailand></Thailand>,
+      },
+      {
+        path: "/cambodia",
+        element:<Cambodia></Cambodia>,
+      },
+    ],
+  },
 ]);
 export default routes;
